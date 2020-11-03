@@ -12,25 +12,24 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 export class AppComponent implements OnInit {
 
-  public selectedIndex = 1;
+  public selectedIndex = 0;
   public appPages = [
     {
-      title: 'WA-Links',
+      title: 'wa-links',
       url: '/folder/WA-Links',
       icon: 'logo-whatsapp'
     },
     {
       title: 'Stats',
-      url: '/folder/Stats',
+      url: '/folder/stats',
       icon: 'bar-chart-outline'
     },
     {
       title: 'Logout',
-      url: '/folder/Logout',
+      url: '/folder/logout',
       icon: 'log-out'
     }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
 
   constructor(
@@ -41,12 +40,16 @@ export class AppComponent implements OnInit {
     this.initializeApp();
   }
 
+
   initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
+    this.platform.ready().then(
+      () => {
+        this.statusBar.styleDefault();
+        this.splashScreen.hide();
+      }
+    );
   }
+
 
   ngOnInit() {
     const path = window.location.pathname.split('folder/')[1];
@@ -54,4 +57,5 @@ export class AppComponent implements OnInit {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
   }
+
 }

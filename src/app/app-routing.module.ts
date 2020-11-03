@@ -5,7 +5,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/WA-Links',
+    redirectTo: 'folder/wa-links',
     pathMatch: 'full'
   },
   {

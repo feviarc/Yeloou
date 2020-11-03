@@ -24,7 +24,7 @@ export class FolderPage implements OnInit {
 
 
   openWAlink() {
-    alert('Sending Whatsapp link!!!');
+    window.location.href = `https://wa.me/?text=${this.waLink}`;
   }
 
 }
